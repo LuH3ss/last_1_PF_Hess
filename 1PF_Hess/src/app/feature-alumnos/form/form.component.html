@@ -1,0 +1,22 @@
+<form [formGroup]="formAlumnos" (ngSubmit)="onSubmit()">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput formControlName="apellido">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Curso</mat-label>
+    <mat-select formControlName="curso">
+      <mat-option value="one">Angular</mat-option>
+      <mat-option value="two">Vue Js.</mat-option>
+      <mat-option value="three">MySql</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit">Guardar</button>
+  <button (click)="retornar()">Cancelar</button>
+  
+</form>

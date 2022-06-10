@@ -1,0 +1,32 @@
+
+<mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="desplegado = !desplegado">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name text-center"> Menu</h1>
+  </mat-toolbar>
+  
+  <mat-sidenav-container  class="example-container" autosize>
+    <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseEnters()"
+      (mouseleave)="mouseLeaves()">
+      <mat-nav-list>
+        <mat-list-item (click)="verMenu = !verMenu" class="parent">
+          <span class="full-width" *ngIf="desplegado || muestra">Alumnos</span>
+          <mat-icon mat-list-icon>school</mat-icon>
+  
+        </mat-list-item>
+        <mat-list-item (click)="verMenu = !verMenu" class="parent">
+          <span class="full-width" *ngIf="desplegado || muestra">Cursos</span>
+          <mat-icon mat-list-icon>book</mat-icon>
+        </mat-list-item>
+         <mat-list-item (click)="verMenu = !verMenu" class="parent">
+          <span class="full-width" *ngIf="desplegado || muestra">Inscripciones  </span>
+          <mat-icon mat-list-icon>edit_note</mat-icon>
+        </mat-list-item> 
+      </mat-nav-list>
+      <mat-nav-list> </mat-nav-list>
+    </mat-sidenav>
+  
+    <div class="example-sidenav-content"><app-lista-laumnos class="lista"></app-lista-laumnos></div>
+  </mat-sidenav-container>
+  
